@@ -44,9 +44,9 @@ OBJS = jzip.o control.o extern.o fileio.o input.o interpre.o license.o \
         math.o memory.o object.o operand.o osdepend.o property.o quetzal.o \
 	screen.o text.o variable.o unixio.o
 
-all  : jzip ckifzs
+all  : zmac ckifzs
 
-jzip : $(OBJS) ztypes.h jzip.h
+zmac : $(OBJS) ztypes.h jzip.h
 	$(CC) -o $@ $(CFLAGS) $(OBJS) $(LIBS)
 
 ckifzs : ckifzs.o
@@ -57,7 +57,7 @@ clean :
 	-rm -f *.o
 
 realclean :
-	-rm -f *.o jzip ckifzs
+	-rm -f *.o zmac ckifzs
 
 DATE = `date +%m%d%Y`
 FULLDATE = `date '+%a, %b %d %Y'`
